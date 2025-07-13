@@ -11,9 +11,12 @@ inputButton.addEventListener("click", addItem);
 
 function loadState() {
   const stringState = localStorage.getItem(STATE_KEY);
-  if (stringState !== "{}") {
-    return JSON.parse(stringState);
+
+  const parsed = JSON.parse(stringState);
+  if (Array.isArray(parsed)) {
+    return parsed;
   }
+
   return [];
 }
 
@@ -32,8 +35,10 @@ function saveState(list) {
 function initList() {
   // load state
   listState = loadState();
+  console.log("listState", listState);
+
   // render List
-  const ul = document.getElementById("List");
+  const ul = document.getElementById("list");
 
   for (item of listState) {
     let li = createItem(item.text, item.checked);
