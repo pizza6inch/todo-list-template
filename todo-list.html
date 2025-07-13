@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        background-color: lightblue;
+        width: 600px;
+        margin: 200px auto;
+        padding: 10px 100px;
+        border-radius: 50px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 70px;
+      }
+      .innerButton {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .innerButton input {
+        padding: 10px;
+        margin-right: 10px;
+        width: 300px;
+        border-radius: 5px;
+        border: 0;
+      }
+      .innerButton button {
+        padding: 10px;
+        border-radius: 5px;
+        border: 0;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .list {
+        padding: 0;
+        border-radius: 10px;
+      }
+      .list li {
+        vertical-align: middle;
+        font-size: 20px;
+        list-style: none;
+        padding: 10px;
+        background-color: #fff;
+        position: relative;
+        display: flex;
+      }
+      .list li.checked {
+        text-decoration: line-through;
+      }
+      .list li:before {
+        content: "[ ]";
+        display: inline-block;
+        width: 20px;
+        height: auto;
+        cursor: pointer;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+      .list li.checked:before {
+        content: "[x]";
+        text-decoration: none;
+      }
+      .list li button {
+        position: absolute;
+        right: 10px;
+        height: 30px;
+        background-color: #f44336;
+        color: #fff;
+        border: 0;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My ToDo List</h1>
+      <div class="innerButton">
+        <input type="text" id="input" />
+        <button id="addButton">ADD</button>
+      </div>
+      <ul class="list" id="list">
+      </ul>
+    </div>
+  </body>
+
+  <script src="todo-list.js"></script>
+</html>
